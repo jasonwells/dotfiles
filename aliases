@@ -1,0 +1,20 @@
+#Alias Definitions
+
+#Common
+alias ls='ls -G'
+alias la='ls -A'
+alias ll='ls -alF'
+alias l='ls -CF'
+
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ':q'='exit'
+
+alias ping='ping -c 4'
+alias grep='grep --color'
+
+#Custom scripts
+alias oth='osascript ~/Dropbox/Documents/Development/Workflows/Open\ Terminal\ Here.scpt &>/dev/null'
+
+#Line wrapping and globbing protection for sqlplus
+alias sqlplus='noglob rlwrap sqlplus'
