@@ -87,6 +87,9 @@ set encoding=utf-8
 " Filetype-based autoindent
 filetype indent off
 
+" No line folding
+set nofoldenable
+
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
