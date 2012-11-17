@@ -52,17 +52,30 @@ fi
 # Path
 
 ## Local Installs
-export set PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 ## Oracle
-export set DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Applications/Utilities/instantclient
-export set ORACLE_HOME=/Applications/Utilities/instantclient/home
-#export set TNS_ADMIN=$ORACLE_HOME/network/admin
-export set PATH=$PATH:/Applications/Utilities/instantclient
+if [ -d /Applications/Utilities/instantclient ]; then
+	 export DYLD_LIBRARY_PATH=/Applications/Utilities/instantclient
+	 export ORACLE_HOME=/Applications/Utilities/instantclient
+   export PATH=$PATH:/Applications/Utilities/instantclient
+fi
 
 ## MAMP/MySQL
-export set MAMP=/Applications/MAMP/Library
-export set PATH=$PATH:$MAMP/bin
+if [ -d /Applications/MAMP ]; then
+   export MAMP=/Applications/MAMP/Library
+   export PATH=$PATH:$MAMP/bin
+fi
 
-# Editor
-export set EDITOR='mate -w'
+## Editor
+if [ -d /Applications/TextMate.app ]; then
+   export EDITOR='mate -w'
+else
+   export EDITOR=vim
+fi
+
+## rbenv
+if [ -d $HOME/.rbenv ]; then
+   eval "$(rbenv init -)"
+   export PATH="$HOME/.rbenv/bin:$PATH"
+fi
