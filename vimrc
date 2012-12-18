@@ -48,8 +48,9 @@ endif
 " Line numbers
 set number
 
-" Syntax highlighting
+" Syntax highlighting and filetype specific functions
 syntax on
+filetype plugin on
 
 " gvim specific settings
 if has("gui_running")
