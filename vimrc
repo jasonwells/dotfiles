@@ -45,6 +45,9 @@ else
 	set directory=~/.vim/swap
 endif
 
+" Load Pathogen
+call pathogen#infect()
+
 " Line numbers
 set number
 
@@ -78,9 +81,6 @@ set nobackup
 " Wrap long lines at a word break instead of some random character location
 set linebreak
 set display=lastline
-
-" Markdown syntax highlighting
-au! BufNewFile,BufRead *.md  set filetype=mkd
 
 " Encoding
 set encoding=utf-8
