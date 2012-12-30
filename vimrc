@@ -55,11 +55,23 @@ set number
 syntax on
 filetype plugin on
 
+" Always show bookmarks in file browser
+let NERDTreeShowBookmarks=1
+
 " gvim specific settings
 if has("gui_running")
-	colorscheme slate
-	set gfn=Inconsolata:h11
-	set lines=75 columns=115
+	set background=dark
+	colorscheme solarized
+	
+	" different mac vs windows gui preferences
+	if has("gui_macvim")
+		let macvim_hig_shift_movement = 1 " highlight with shift
+		set gfn=Inconsolata:h14
+		set lines=999 columns=150
+	else
+		set gfn=Inconsolata:h11
+		set lines=75 columns=115
+	endif
 endif
 
 " Tabs
@@ -73,7 +85,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-nohlsearch			" we don't want to see highlights at first
+nohlsearch		" we don't want to see highlights at first
 
 " Backups
 set nobackup
