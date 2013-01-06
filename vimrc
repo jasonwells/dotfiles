@@ -51,9 +51,10 @@ call pathogen#infect()
 " Line numbers
 set number
 
-" Syntax highlighting and filetype specific functions
+" Syntax highlighting and filetype plugin specific
 syntax on
 filetype plugin on
+filetype indent on
 
 " Always show bookmarks in file browser
 let NERDTreeShowBookmarks=1
@@ -97,10 +98,7 @@ set display=lastline
 " Encoding
 set encoding=utf-8
 
-" Filetype-based autoindent
-filetype indent off
-
-" No line folding
+" No line folding	
 set nofoldenable
 
 " Allow backspacing over everything in insert mode
@@ -114,3 +112,6 @@ set confirm
 
 " ttyfast
 set ttyfast
+
+" Filetype specific settings
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
