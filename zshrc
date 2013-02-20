@@ -47,7 +47,7 @@ PROMPT='%n@%m:%c%# '
 
 # Alias Definitions
 if [ -f ~/.aliases ]; then
-   . ~/.aliases
+    . ~/.aliases
 fi
 
 # Java
@@ -60,8 +60,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 ## Oracle
 if [ -d /Applications/Utilities/instantclient ]; then
-	export ORACLE_HOME=/Applications/Utilities/instantclient
-	export PATH=$PATH:$ORACLE_HOME
+    export ORACLE_HOME=/Applications/Utilities/instantclient
+    export PATH=$PATH:$ORACLE_HOME
 fi
 
 ## MAMP/MySQL
