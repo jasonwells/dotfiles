@@ -31,6 +31,7 @@ unsetopt beep
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 export LC_CTYPE=C
+export NLS_LANG='AMERICAN_AMERICA.UTF8' # Oracle specific
 
 # Correction
 setopt correct						# spellcheck commands (not arguments)
@@ -49,6 +50,9 @@ if [ -f ~/.aliases ]; then
    . ~/.aliases
 fi
 
+# Java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+
 # Path
 
 ## Local Installs
@@ -56,9 +60,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 ## Oracle
 if [ -d /Applications/Utilities/instantclient ]; then
-	 export DYLD_LIBRARY_PATH=/Applications/Utilities/instantclient
-	 export ORACLE_HOME=/Applications/Utilities/instantclient
-   export PATH=$PATH:/Applications/Utilities/instantclient
+	export ORACLE_HOME=/Applications/Utilities/instantclient
+	export PATH=$PATH:$ORACLE_HOME
 fi
 
 ## MAMP/MySQL
@@ -68,10 +71,10 @@ if [ -d /Applications/MAMP ]; then
 fi
 
 ## Editor
-if [ -d /Applications/TextMate.app ]; then
-   export EDITOR='mate -w'
+if [ -d ~/Applications/MacVim ]; then
+   export EDITOR='mvim -f'
 else
-   export EDITOR=vim
+   export EDITOR='vim'
 fi
 
 ## rbenv
