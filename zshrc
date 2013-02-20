@@ -6,17 +6,17 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt share_history				# share command history data
-setopt append_history				# append history list to history file (rather than overwriting)
-setopt inc_append_history			# add new history lines to the history file in real-time
-setopt extended_history				# save beginning/ending history timestamps
-setopt hist_expire_dups_first		# if history's full, expire old duplicates first
-setopt hist_ignore_dups				# don't add commands if they're same as the last command
-setopt hist_ignore_space			# if you type a space first, the cmd won't be added to the history
+setopt share_history            # share command history data
+setopt append_history           # append history list to history file (rather than overwriting)
+setopt inc_append_history       # add new history lines to the history file in real-time
+setopt extended_history         # save beginning/ending history timestamps
+setopt hist_expire_dups_first   # if history's full, expire old duplicates first
+setopt hist_ignore_dups         # don't add commands if they're same as the last command
+setopt hist_ignore_space        # if you type a space first, the cmd won't be added to the history
 
 # Auto cd
-setopt auto_cd						# if you type a dir name in, cd to that dir
-setopt cdable_vars					# if the argument to cd isn't a dir, expand as if it started with ~
+setopt auto_cd                  # if you type a dir name in, cd to that dir
+setopt cdable_vars              # if the argument to cd isn't a dir, expand as if it started with ~
 
 # Vi bindings
 bindkey -v
@@ -66,19 +66,19 @@ fi
 
 ## MAMP/MySQL
 if [ -d /Applications/MAMP ]; then
-   export MAMP=/Applications/MAMP/Library
-   export PATH=$PATH:$MAMP/bin
+    export MAMP=/Applications/MAMP/Library
+    export PATH=$PATH:$MAMP/bin
 fi
 
 ## Editor
 if [ -d ~/Applications/MacVim ]; then
-   export EDITOR='mvim -f'
+    export EDITOR='mvim -f'
 else
-   export EDITOR='vim'
+    export EDITOR='vim'
 fi
 
 ## rbenv
 if [ -d $HOME/.rbenv ]; then
-   eval "$(rbenv init -)"
-   export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+    export PATH="$HOME/.rbenv/bin:$PATH"
 fi
