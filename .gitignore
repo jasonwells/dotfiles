@@ -1,2 +1,3 @@
 # Ignore general mac files
 .DS_Store
+.netrwhist
