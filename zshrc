@@ -1,6 +1,15 @@
 # Jason Wells' .zshrc
 # http://flipstock.net
 
+# antigen
+source ~/.antigen.zsh
+
+# antigen bundles
+antigen-bundle git
+
+# Tell antigen that you're done.
+antigen-apply
+
 # History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000
@@ -82,3 +91,6 @@ if [ -d $HOME/.rbenv ]; then
     eval "$(rbenv init -)"
     export PATH="$HOME/.rbenv/bin:$PATH"
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
