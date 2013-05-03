@@ -70,7 +70,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ## Oracle
 if [ -d /Applications/Utilities/instantclient ]; then
     export ORACLE_HOME=/Applications/Utilities/instantclient
-    export PATH=$PATH:$ORACLE_HOME
+    export OCI_INCLUDE_DIR=$ORACLE_HOME/sdk/include/
+    export OCI_LIB_DIR=$ORACLE_HOME
 fi
 
 ## MAMP/MySQL
@@ -84,6 +85,11 @@ if [ -d ~/Applications/MacVim ]; then
     export EDITOR='mvim -f'
 else
     export EDITOR='vim'
+fi
+
+## npm
+if [ -d /usr/local/share/npm ]; then
+    export PATH=/usr/local/share/npm/bin:$PATH
 fi
 
 ## rbenv
