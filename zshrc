@@ -60,7 +60,9 @@ if [ -f ~/.aliases ]; then
 fi
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+if [ -f /usr/libexec/java_home ]; then
+    export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+fi
 
 # Path
 
