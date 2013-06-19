@@ -51,6 +51,9 @@ call pathogen#infect()
 " Line numbers
 set number
 
+" Show column and line
+set ruler
+
 " Syntax highlighting and filetype plugin specific
 syntax on
 filetype plugin on
