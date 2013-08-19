@@ -12,3 +12,4 @@
 @DOSKEY mv=MOVE $*
 @DOSKEY cp=COPY $*
 @DOSKEY ifconfig=IPCONFIG $*
+@DOSKEY pwd=echo %cd%
