@@ -64,6 +64,11 @@ if [ -f /usr/libexec/java_home ]; then
     export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 fi
 
+# psql
+if [ -d /Applications/Postgres.app ]; then
+    export PATH=$PATH:/Applications/Postgres.app/Contents/MacOS/bin
+fi
+
 # Path
 
 ## Local Installs
