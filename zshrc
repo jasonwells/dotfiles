@@ -1,15 +1,6 @@
 # Jason Wells' .zshrc
 # http://flipstock.net
 
-# antigen
-source ~/.antigen.zsh
-
-# antigen bundles
-antigen-bundle git
-
-# Tell antigen that you're done.
-antigen-apply
-
 # History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000
