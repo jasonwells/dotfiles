@@ -121,3 +121,6 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " airline
 set laststatus=2
+
+" Ctrl-P tags
+nnoremap <leader>t :CtrlPTag<CR>
