@@ -96,8 +96,11 @@ if [ -d $HOME/.rbenv ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
+## pyenv
+if [ -d $HOME/.pyenv ]; then
+    eval "$(pyenv init -)"
+    export PATH="$HOME/.pyenv/shims:$PATH"
+fi
+
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
