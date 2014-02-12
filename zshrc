@@ -1,6 +1,11 @@
 # Jason Wells' .zshrc
 # http://flipstock.net
 
+# Path
+if [ -x /usr/libexec/path_helper ]; then
+    eval `/usr/libexec/path_helper -s`
+fi
+
 # History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000
