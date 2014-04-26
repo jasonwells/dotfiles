@@ -75,6 +75,8 @@ if [ -d /Applications/Utilities/instantclient ]; then
     export ORACLE_HOME=/Applications/Utilities/instantclient
     export OCI_INCLUDE_DIR=$ORACLE_HOME/sdk/include/
     export OCI_LIB_DIR=$ORACLE_HOME
+    # export DYLD_LIBRARY_PATH=/Applications/Utilities/instantclient
+    # export TNS_ADMIN=$ORACLE_HOME/network/admin
 fi
 
 ## MAMP/MySQL
