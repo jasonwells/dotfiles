@@ -121,6 +121,8 @@ set ttyfast
 
 " Filetype specific settings
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+
 
 " airline
 set laststatus=2
