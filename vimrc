@@ -82,9 +82,9 @@ if has("gui_running")
 endif
 
 " Tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 
 " Searching
@@ -120,9 +120,7 @@ set confirm
 set ttyfast
 
 " Filetype specific settings
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
-
+autocmd Filetype python setlocal ts=4 sts=4 sw=4
 
 " airline
 set laststatus=2
