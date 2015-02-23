@@ -56,9 +56,9 @@ if [ -f ~/.aliases ]; then
 fi
 
 # Java
-if [ -f /usr/libexec/java_home ]; then
-    export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-fi
+#if [ -f /usr/libexec/java_home ]; then
+    #export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+#fi
 
 # psql
 if [ -d /Applications/Postgres.app ]; then
