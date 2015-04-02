@@ -19,3 +19,6 @@ alias burp='(java -jar /usr/local/bin/burpsuite_v1.4.01.jar &)'
 
 #Line wrapping and globbing protection for sqlplus
 alias sqlplus='noglob rlwrap sqlplus'
+
+# Brew shortcut
+alias brewit='brew update && brew upgrade && brew cleanup'
