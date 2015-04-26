@@ -21,4 +21,4 @@ alias burp='(java -jar /usr/local/bin/burpsuite_v1.4.01.jar &)'
 alias sqlplus='noglob rlwrap sqlplus'
 
 # Brew shortcut
-alias brewit='brew update && brew upgrade && brew cleanup'
+alias brewit='brew update && brew upgrade --all && brew cleanup'
