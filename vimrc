@@ -57,6 +57,9 @@ set number
 " Show column and line
 set ruler
 
+" Better indenting on line breaks
+set breakindent
+
 " Syntax highlighting and filetype plugin specific
 syntax on
 filetype plugin on
