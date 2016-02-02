@@ -57,9 +57,6 @@ set number
 " Show column and line
 set ruler
 
-" Better indenting on line breaks
-set breakindent
-
 " Syntax highlighting and filetype plugin specific
 syntax on
 filetype plugin on
@@ -82,6 +79,9 @@ if has("gui_running")
         set gfn=Inconsolata:h11
         set lines=75 columns=115
     endif
+
+    " Better indenting on line breaks
+    set breakindent
 endif
 
 " Tabs
