@@ -130,5 +130,6 @@ set laststatus=2
 
 " Ctrl-P tags
 nnoremap <leader>t :CtrlPTag<CR>
+set wildignore+=*/node_modules/*,*/bower_components/*
 
 autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
