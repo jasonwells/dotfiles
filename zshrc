@@ -62,7 +62,7 @@ fi
 
 # psql
 if [ -d /Applications/Postgres.app ]; then
-    export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+    export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 fi
 
 # Path
@@ -110,5 +110,14 @@ if [ -d $HOME/.pyenv ]; then
     export PATH="$HOME/.pyenv/shims:$PATH"
 fi
 
+## gopath
+if [ -d $HOME/.go ]; then
+    export GOPATH=$HOME/.go
+fi
+
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+# rack environment
+export RACK_ENV=development
+export TERM_CHILD=1
