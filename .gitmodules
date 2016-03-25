@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-angular-template"]
 	path = vim/bundle/vim-angular-template
 	url = https://github.com/curist/vim-angular-template.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
