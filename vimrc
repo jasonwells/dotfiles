@@ -4,69 +4,29 @@
 " no vi compatibility
 set nocompatible
 
-" Windows specific settings
-if has("win32")
-    " Default Windows behaviors
-    source $VIMRUNTIME/mswin.vim
-    behave mswin
-
-    set diffexpr=MyDiff()
-    function MyDiff()
-        let opt = '-a --binary '
-        if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-        if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-        let arg1 = v:fname_in
-        if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-        let arg2 = v:fname_new
-        if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-        let arg3 = v:fname_out
-        if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-        let eq = ''
-        if $VIMRUNTIME =~ ' '
-            if &sh =~ '\<cmd'
-                let cmd = '""' . $VIMRUNTIME . '\diff"'
-                let eq = '"'
-            else
-                let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-            endif
-        else
-            let cmd = $VIMRUNTIME . '\diff'
-        endif
-        silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-    endfunction
-
-    " Don't use *.ext~ files on Windows
-    set nowritebackup
-
-    " Vim Windows swap directory
-    set directory=$HOMEPATH/vimfiles/swap
-
-    " Open markdown files with Chrome.
-    autocmd BufEnter *.md exe 'noremap <F5> :silent :!start C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "%:p"<CR>'
-else
-    " Vim unix swap directory
-    set directory=~/.vim/swap
-endif
+" Vim unix swap directory
+set directory=~/.vim/swap
 
 " Load Plugins with https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'msanders/snipmate.vim'
-Plug 'motemen/git-vim'
-Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tomtom/tlib_vim'
+Plug 'marcweber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
-Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-haml'
-Plug 'PProvost/vim-ps1'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
-Plug 'xolox/vim-easytags'
-Plug 'bling/vim-airline'
-Plug 'xolox/vim-misc'
 Plug 'tpope/vim-fugitive'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'vim-airline/vim-airline'
 Plug 'burnettk/vim-angular'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -74,6 +34,7 @@ Plug 'curist/vim-angular-template'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'leafgarland/typescript-vim'
+Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 " Line numbers
