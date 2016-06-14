@@ -48,8 +48,33 @@ else
     set directory=~/.vim/swap
 endif
 
-" Load Pathogen
-call pathogen#infect()
+" Load Plugins with https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'msanders/snipmate.vim'
+Plug 'motemen/git-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-haml'
+Plug 'PProvost/vim-ps1'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'xolox/vim-easytags'
+Plug 'bling/vim-airline'
+Plug 'xolox/vim-misc'
+Plug 'tpope/vim-fugitive'
+Plug 'burnettk/vim-angular'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'curist/vim-angular-template'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'leafgarland/typescript-vim'
+call plug#end()
 
 " Line numbers
 set number
@@ -136,3 +161,5 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 
 " Extended bracket matching
 runtime macros/matchit.vim
+
+let vim_markdown_preview_hotkey='<C-m>'
