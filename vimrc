@@ -34,7 +34,6 @@ Plug 'curist/vim-angular-template'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'leafgarland/typescript-vim'
-Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 " Line numbers
