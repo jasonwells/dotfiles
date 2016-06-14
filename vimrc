@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-jdaddy'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'vim-airline/vim-airline'
@@ -123,3 +124,6 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 runtime macros/matchit.vim
 
 let vim_markdown_preview_hotkey='<C-m>'
+
+" Map json pretty print
+map <C-j> gqaj
