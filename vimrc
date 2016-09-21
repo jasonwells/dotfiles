@@ -128,3 +128,7 @@ let vim_markdown_preview_hotkey='<C-m>'
 
 " Map json pretty print
 map <C-j> gqaj
+
+" Auto and smart indenting
+set autoindent
+set smartindent
