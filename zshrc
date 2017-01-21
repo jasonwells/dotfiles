@@ -1,6 +1,12 @@
 # Jason Wells' .zshrc
 # http://flipstock.net
 
+# oh-my-zsh
+export ZSH=/Users/jason/.oh-my-zsh
+ZSH_THEME="robbyrussell"
+plugins=(git wd)
+source $ZSH/oh-my-zsh.sh
+
 # Path
 if [ -x /usr/libexec/path_helper ]; then
     eval `/usr/libexec/path_helper -s`
@@ -111,8 +117,9 @@ if [ -d $HOME/.pyenv ]; then
 fi
 
 ## gopath
-if [ -d $HOME/.go ]; then
-    export GOPATH=$HOME/.go
+if [ -d $HOME/go ]; then
+    export GOPATH=$HOME/go
+    export PATH="$GOPATH/bin:$PATH"
 fi
 
 # cache pip-installed packages to avoid re-downloading
@@ -121,3 +128,5 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # rack environment
 export RACK_ENV=development
 export TERM_CHILD=1
+
+plugins=(wd)
