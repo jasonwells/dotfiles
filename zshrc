@@ -130,3 +130,9 @@ export RACK_ENV=development
 export TERM_CHILD=1
 
 plugins=(wd)
+
+# Node version manager
+if [ -d /usr/local/opt/nvm ]; then
+  export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+fi
