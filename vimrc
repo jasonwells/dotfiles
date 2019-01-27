@@ -36,6 +36,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
 " Line numbers
@@ -132,3 +133,7 @@ map <C-j> gqaj
 " Auto and smart indenting
 set autoindent
 set smartindent
+
+" Prettier formatting
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
