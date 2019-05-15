@@ -136,3 +136,8 @@ if [ -d /usr/local/opt/nvm ]; then
   export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
 fi
+
+# added by Snowflake SnowSQL installer v1.0
+if [ -d /Applications/SnowSQL.app ]; then
+  export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+fi

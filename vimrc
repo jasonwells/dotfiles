@@ -37,6 +37,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 " Line numbers
