@@ -54,7 +54,7 @@ setopt extended_glob				# globbing goodness
 autoload zmv
 
 # Prompt user@host:directory$
-PROMPT='%n@%m:%c%# '
+#PROMPT='%n@%m:%c%# '
 
 # Alias Definitions
 if [ -f ~/.aliases ]; then
@@ -141,3 +141,5 @@ fi
 if [ -d /Applications/SnowSQL.app ]; then
   export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
 fi
+
+source ~/.secrets
