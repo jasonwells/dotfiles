@@ -142,6 +142,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# Python virtual environment manager
+if [ -d /usr/local/bin/pyenv-virtualenv ]; then
+  eval "$(pyenv virtualenv-init -)"
+end
+
 # added by Snowflake SnowSQL installer v1.0
 if [ -d /Applications/SnowSQL.app ]; then
   export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
