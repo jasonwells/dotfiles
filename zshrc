@@ -110,12 +110,6 @@ if [ -d $HOME/.rbenv ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
-## pyenv
-if [ -d $HOME/.pyenv ]; then
-    eval "$(pyenv init -)"
-    export PATH="$HOME/.pyenv/shims:$PATH"
-fi
-
 ## gopath
 if [ -d $HOME/go ]; then
     export GOPATH=$HOME/go
@@ -145,7 +139,7 @@ fi
 # Python virtual environment manager
 if [ -d /usr/local/bin/pyenv-virtualenv ]; then
   eval "$(pyenv virtualenv-init -)"
-end
+fi
 
 # added by Snowflake SnowSQL installer v1.0
 if [ -d /Applications/SnowSQL.app ]; then
