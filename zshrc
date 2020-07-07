@@ -137,6 +137,11 @@ if [ -d /usr/local/opt/nvm ]; then
   . "/usr/local/opt/nvm/nvm.sh"
 fi
 
+# Python version manager
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # added by Snowflake SnowSQL installer v1.0
 if [ -d /Applications/SnowSQL.app ]; then
   export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
