@@ -61,6 +61,10 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+if [ -d /opt/homebrew ]; then
+  export PATH=$PATH:/opt/homebrew/bin
+fi
+
 # Java
 #if [ -f /usr/libexec/java_home ]; then
     #export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
@@ -144,6 +148,10 @@ fi
 # added by Snowflake SnowSQL installer v1.0
 if [ -d /Applications/SnowSQL.app ]; then
   export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+fi
+
+if [ -d /Applications/MacVim.app/Contents/bin ]; then
+  export PATH=/Applications/MacVim.app/Contents/bin:$PATH
 fi
 
 source ~/.secrets
