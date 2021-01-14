@@ -4,7 +4,7 @@
 # oh-my-zsh
 export ZSH=/Users/jason/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-plugins=(git wd)
+plugins=(git wd history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 # Path
