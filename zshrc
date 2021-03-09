@@ -62,7 +62,7 @@ if [ -f ~/.aliases ]; then
 fi
 
 if [ -d /opt/homebrew ]; then
-  export PATH=$PATH:/opt/homebrew/bin
+  export PATH=/opt/homebrew/bin:$PATH
 fi
 
 # Java
