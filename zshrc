@@ -112,6 +112,7 @@ fi
 if [ -d $HOME/.rbenv ]; then
     eval "$(rbenv init -)"
     export PATH="$HOME/.rbenv/bin:$PATH"
+    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(ibrew --prefix openssl@1.1)"
 fi
 
 ## gopath
@@ -132,7 +133,8 @@ plugins=(wd)
 # Node version manager
 if [ -d /usr/local/opt/nvm ]; then
   export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
 # Python version manager
@@ -155,3 +157,4 @@ if [ -d /Applications/MacVim.app/Contents/bin ]; then
 fi
 
 source ~/.secrets
+source ~/.functions

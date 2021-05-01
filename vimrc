@@ -137,3 +137,6 @@ set smartindent
 " Prettier formatting
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+" Snippet Change
+let g:snipMate = { 'snippet_version' : 1 }
