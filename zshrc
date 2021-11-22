@@ -131,10 +131,10 @@ export TERM_CHILD=1
 plugins=(wd)
 
 # Node version manager
-if [ -d /usr/local/opt/nvm ]; then
+if [ -d ~/.nvm ]; then
   export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # Python version manager
@@ -158,3 +158,8 @@ fi
 
 source ~/.secrets
 source ~/.functions
+
+# used with our Ruby snowflake projects
+if [ -f ~/.odbc.ini ]; then
+  export ODBC_CONFIGURED=true
+fi
