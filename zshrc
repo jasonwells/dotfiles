@@ -139,11 +139,10 @@ fi
 
 # Python version manager
 if command -v pyenv 1>/dev/null 2>&1; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
-fi
-
-# Python virtual environment manager
-if [ -d /usr/local/bin/pyenv-virtualenv ]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
