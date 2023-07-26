@@ -37,6 +37,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'mxw/vim-jsx'
+Plug 'github/copilot.vim'
 call plug#end()
 
 " Line numbers
@@ -61,7 +62,7 @@ if has("gui_running")
     " different mac vs windows gui preferences
     if has("gui_macvim")
         let macvim_hig_shift_movement = 1 " highlight with shift
-        set gfn=Inconsolata:h14
+        set gfn=Inconsolata:h16
         set lines=999 columns=150
     else
         set gfn=Inconsolata:h11

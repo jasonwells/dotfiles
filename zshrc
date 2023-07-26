@@ -144,6 +144,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
+  export PATH="/Users/jason/.local/bin:$PATH"
 fi
 
 # added by Snowflake SnowSQL installer v1.0
@@ -162,3 +163,14 @@ source ~/.functions
 if [ -f ~/.odbc.ini ]; then
   export ODBC_CONFIGURED=true
 fi
+
+# bun completions
+[ -s "/Users/jason/.bun/_bun" ] && source "/Users/jason/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# playdate
+export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
+export PATH="/opt/homebrew/opt/libiodbc/bin:$PATH"
