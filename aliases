@@ -21,10 +21,9 @@ alias burp='(java -jar /usr/local/bin/burpsuite_v1.4.01.jar &)'
 alias sqlplus='noglob rlwrap sqlplus'
 
 # Brew shortcut
-alias brew='env PATH="${PATH//$(pyenv root)/shims:/}" /opt/homebrew/bin/brew'
 alias brewit='brew update && brew upgrade && brew cleanup'
-alias ibrew='env PATH="${PATH//$(pyenv root)/shims:/}" arch -x86_64 /usr/local/bin/brew'
-alias ibrewit='ibrew update && ibrew upgrade && ibrew cleanup'
 
 # Overrides
 alias vim='/opt/homebrew/bin/vim'
+alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+

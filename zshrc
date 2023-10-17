@@ -98,7 +98,7 @@ fi
 
 ## Editor
 if [ -d ~/Applications/MacVim ]; then
-    export EDITOR='mvim -f'
+    export EDITOR='gvim -f'
 else
     export EDITOR='vim'
 fi
@@ -112,7 +112,7 @@ fi
 if [ -d $HOME/.rbenv ]; then
     eval "$(rbenv init -)"
     export PATH="$HOME/.rbenv/bin:$PATH"
-    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(ibrew --prefix openssl@1.1)"
+    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)" # use @1.1 if ruby < 3
 fi
 
 ## gopath
@@ -133,8 +133,8 @@ plugins=(wd)
 # Node version manager
 if [ -d ~/.nvm ]; then
   export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
 # Python version manager
