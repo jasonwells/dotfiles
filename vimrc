@@ -1,43 +1,32 @@
 " Jason Wells .vimrc
 " http://flipstock.net
 
-" no vi compatibility
-set nocompatible
-
 " Vim unix swap directory
 set directory=~/.vim/swap
 
 " Load Plugins with https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
-Plug 'tomtom/tlib_vim'
-Plug 'marcweber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-haml'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-jdaddy'
-" Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'vim-airline/vim-airline'
-Plug 'burnettk/vim-angular'
 Plug 'pangloss/vim-javascript'
-Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-Plug 'mxw/vim-jsx'
-Plug 'github/copilot.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 " Line numbers
@@ -56,22 +45,23 @@ let NERDTreeShowBookmarks=1
 
 " gvim specific settings
 if has("gui_running")
-    set background=dark
-    colorscheme solarized
+  set background=dark
+  colorscheme solarized
 
-    " different mac vs windows gui preferences
-    if has("gui_macvim")
-        let macvim_hig_shift_movement = 1 " highlight with shift
-        set gfn=Inconsolata:h16
-        set lines=999 columns=150
-    else
-        set gfn=Inconsolata:h11
-        set lines=75 columns=115
-    endif
+  " different mac vs windows gui preferences
+  if has("gui_macvim")
+    let macvim_hig_shift_movement = 1 " highlight with shift
+    set gfn=Inconsolata:h16
+    set lines=999 columns=150
+  else
+    set gfn=Inconsolata:h11
+    set lines=75 columns=115
+  endif
 
-    " Better indenting on line breaks
-    set breakindent
 endif
+
+" Better indenting on line breaks
+set breakindent
 
 " Tabs
 set tabstop=2
@@ -99,6 +89,9 @@ set encoding=utf-8
 " No line folding
 set nofoldenable
 
+" Auto-reload files changed outside Vim
+set autoread
+
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -107,9 +100,6 @@ set hidden
 
 " If unsaved changes, ask if you want to save
 set confirm
-
-" ttyfast
-set ttyfast
 
 " Filetype specific settings
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
@@ -120,8 +110,6 @@ set laststatus=2
 " Ctrl-P tags
 nnoremap <leader>t :CtrlPTag<CR>
 set wildignore+=*/node_modules/*,*/bower_components/*,tmp/*,typings/*
-
-autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 
 " Extended bracket matching
 runtime macros/matchit.vim
@@ -139,5 +127,3 @@ set smartindent
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" Snippet Change
-let g:snipMate = { 'snippet_version' : 1 }

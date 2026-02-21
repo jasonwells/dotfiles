@@ -24,6 +24,7 @@ alias sqlplus='noglob rlwrap sqlplus'
 alias brewit='brew update && brew upgrade && brew cleanup'
 
 # Overrides
-alias vim='/opt/homebrew/bin/vim'
+if [ -f /opt/homebrew/bin/vim ]; then
+  alias vim='/opt/homebrew/bin/vim'
+fi
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-
