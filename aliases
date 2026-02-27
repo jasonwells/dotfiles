@@ -23,8 +23,13 @@ alias sqlplus='noglob rlwrap sqlplus'
 # Brew shortcut
 alias brewit='brew update && brew upgrade && brew cleanup'
 
+# Cookie Monster
+alias cm='cookie-monster -relay 9090'
+
 # Overrides
 if [ -f /opt/homebrew/bin/vim ]; then
   alias vim='/opt/homebrew/bin/vim'
 fi
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+alias edit=gvim
+alias diff='nvim -d'

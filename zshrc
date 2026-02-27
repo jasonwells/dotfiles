@@ -76,6 +76,17 @@ if [ -d /Applications/Postgres.app ]; then
   export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 fi
 
+# rancher
+if [ -d /Users/jason/.rd/ ]; then
+    export PATH=$PATH:/Users/jason/.rd/bin
+    # export DOCKER_HOST=unix:///Users/jason/.rd/docker.sock
+fi
+
+# fnm
+if [ -f /opt/homebrew/bin/fnm ]; then
+    eval "$(fnm env --use-on-cd)"
+fi
+
 # Path
 
 ## Local Installs
@@ -99,8 +110,8 @@ if [ -d /Applications/MAMP ]; then
 fi
 
 ## Editor
-if [ -d ~/Applications/MacVim ]; then
-  export EDITOR='gvim -f'
+if [[ -d /Applications/MacVim.app || -d ~/Applications/MacVim.app ]]; then
+    export EDITOR='gvim -f'
 else
   export EDITOR='vim'
 fi
@@ -175,13 +186,13 @@ if [ -f ~/.odbc.ini ]; then
   export ODBC_CONFIGURED=true
 fi
 
-# bun completions
-[ -s "/Users/jason/.bun/_bun" ] && source "/Users/jason/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# mise
+eval "$(mise activate zsh)"
 
 # playdate
 export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
 export PATH="/opt/homebrew/opt/libiodbc/bin:$PATH"
+export PATH="/Users/jason/bin:$PATH"
+
+# bun completions
+[ -s "/Users/jason/.bun/_bun" ] && source "/Users/jason/.bun/_bun"
